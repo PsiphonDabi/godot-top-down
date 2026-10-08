@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" format=3 uid="uid://c7680hfyc072a"]
+
+[ext_resource type="Texture2D" uid="uid://dsfje2upjx2na" path="res://assets/tilesets/autumn_nature.png" id="1_sr7lr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8uhu6"]
+texture = ExtResource("1_sr7lr")
+0:0/size_in_atlas = Vector2i(5, 8)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 57)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.837719, -5.9900074, 8, -5.9900074, 12.233828, 0.91372967, -9.712372, 0.71943474)
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_8uhu6")

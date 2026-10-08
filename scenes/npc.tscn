@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c4f5ex3putuah"]
+
+[ext_resource type="PackedScene" uid="uid://bfc8rts81wrfe" path="res://scenes/character.tscn" id="1_abqhh"]
+[ext_resource type="Script" uid="uid://dyqhb072hkbte" path="res://scenes/npc.gd" id="2_7n8xq"]
+[ext_resource type="Texture2D" uid="uid://dv7lus641trs0" path="res://assets/characters/angel_walk_animation.png" id="2_rv78h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkhd4"]
+radius = 11.045361
+
+[node name="npc" unique_id=449375442 instance=ExtResource("1_abqhh")]
+script = ExtResource("2_7n8xq")
+_npc_name = ""
+
+[node name="texture" parent="." index="0" unique_id=501740398]
+texture = ExtResource("2_rv78h")
+
+[node name="AttackArea" parent="." index="4" unique_id=441592676]
+visible = false
+
+[node name="InterationArea" type="Area2D" parent="." index="5" unique_id=177976844]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterationArea" index="0" unique_id=1276140922]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_rkhd4")
+
+[connection signal="body_entered" from="InterationArea" to="." method="_on_interation_area_body_entered"]
+[connection signal="body_exited" from="InterationArea" to="." method="_on_interation_area_body_exited"]

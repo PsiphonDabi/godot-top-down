@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://mu8oylvpmmg1"]
+
+[ext_resource type="TileSet" uid="uid://dm5mwynbmbapn" path="res://assets/tilesets/saved_tilesets/autumn_terrain.tres" id="1_8uhu6"]
+[ext_resource type="TileSet" uid="uid://c7680hfyc072a" path="res://assets/tilesets/saved_tilesets/autumn_nature.tres" id="2_eifp5"]
+[ext_resource type="TileSet" uid="uid://dy7cqd4snnbxr" path="res://assets/tilesets/saved_tilesets/autumn_decoration.tres" id="3_y8url"]
+
+[node name="Terreno" type="Node2D" unique_id=629607655]
+
+[node name="Chao" type="TileMapLayer" parent="." unique_id=1027672973]
+tile_set = ExtResource("1_8uhu6")
+
+[node name="Ysort" type="Node2D" parent="." unique_id=1415813644]
+y_sort_enabled = true
+
+[node name="Natureza" type="TileMapLayer" parent="Ysort" unique_id=1751804384]
+y_sort_enabled = true
+position = Vector2(52.640427, -41.71007)
+tile_set = ExtResource("2_eifp5")
+
+[node name="Decoracao" type="TileMapLayer" parent="Ysort" unique_id=1685600272]
+y_sort_enabled = true
+tile_set = ExtResource("3_y8url")

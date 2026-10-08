@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bwt7d5p1gm8jy"]
+
+[ext_resource type="Texture2D" uid="uid://dkxdm48cx55ha" path="res://ui/dialogue/DialogBox.png" id="1_3l5nu"]
+[ext_resource type="Texture2D" uid="uid://c8smfp1liwe4k" path="res://assets/characters/pictures/maple_padrao.png" id="2_cno1m"]
+[ext_resource type="FontFile" uid="uid://0fiqp5wn3bi2" path="res://ui/fonts/Pixelta.ttf" id="3_qpcyj"]
+[ext_resource type="Texture2D" uid="uid://dd3mso0abshos" path="res://ui/dialogue/choicebox.png" id="4_bhyd5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3u606"]
+line_spacing = 0.0
+font = ExtResource("3_qpcyj")
+font_size = 9
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogueScene" type="Control" unique_id=1090353772]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dialogbox" type="TextureRect" parent="." unique_id=1730669025]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 129.0
+offset_right = 308.0
+offset_bottom = 179.0
+texture = ExtResource("1_3l5nu")
+
+[node name="picture" type="TextureRect" parent="dialogbox" unique_id=271409596]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -82.0
+offset_right = 124.48126
+offset_bottom = 49.0
+texture = ExtResource("2_cno1m")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="dialog" type="Label" parent="dialogbox" unique_id=1420816085]
+visible = false
+layout_mode = 0
+offset_left = 98.0
+offset_top = 7.0
+offset_right = 288.0
+offset_bottom = 42.0
+text = "Olá, como você está...aaaaaaaaaaaaaaaaaaaaaaaaaaaa a aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+label_settings = SubResource("LabelSettings_3u606")
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="dialogbox" unique_id=457253863]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 7.0
+offset_right = 288.0
+offset_bottom = 44.0
+
+[node name="choicesdialog" type="Label" parent="dialogbox/VBoxContainer" unique_id=679598582]
+layout_mode = 2
+text = "Olá, como você está.."
+label_settings = SubResource("LabelSettings_3u606")
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="dialogbox/VBoxContainer" unique_id=129445630]
+layout_mode = 2
+
+[node name="choice_1" type="NinePatchRect" parent="dialogbox/VBoxContainer/HBoxContainer" unique_id=730164750]
+custom_minimum_size = Vector2(64, 15)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_bhyd5")
+
+[node name="text" type="Label" parent="dialogbox/VBoxContainer/HBoxContainer/choice_1" unique_id=77357179]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -6.0
+offset_right = 28.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bem"
+label_settings = SubResource("LabelSettings_3u606")
+horizontal_alignment = 1
+
+[node name="choice_2" type="NinePatchRect" parent="dialogbox/VBoxContainer/HBoxContainer" unique_id=2028492016]
+custom_minimum_size = Vector2(64, 15)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_bhyd5")
+
+[node name="text" type="Label" parent="dialogbox/VBoxContainer/HBoxContainer/choice_2" unique_id=1209925780]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -6.0
+offset_right = 28.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mal"
+label_settings = SubResource("LabelSettings_3u606")
+horizontal_alignment = 1

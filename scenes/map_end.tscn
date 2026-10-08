@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://djq18apbtelhf"]
+
+[ext_resource type="Script" uid="uid://vxt10dfc773g" path="res://scripts/map_end.gd" id="1_mpi8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_texw0"]
+size = Vector2(20, 10)
+
+[node name="map_end" type="Area2D" unique_id=450573241]
+light_mask = 8
+script = ExtResource("1_mpi8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1091353782]
+shape = SubResource("RectangleShape2D_texw0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
