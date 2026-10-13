@@ -37,9 +37,11 @@ tile_set = ExtResource("3_3nhk3")
 [node name="character" parent="Terreno/Ysort" unique_id=449375442 instance=ExtResource("4_86ipb")]
 position = Vector2(234, 270)
 
-[node name="npc" parent="Terreno/Ysort" unique_id=1263707512 instance=ExtResource("5_owwvt")]
+[node name="npc" parent="Terreno/Ysort" unique_id=1263707512 node_paths=PackedStringArray("_interface") instance=ExtResource("5_owwvt")]
 position = Vector2(296, 180)
 _npc_name = "angel"
+_interface = NodePath("../../../Interface")
+speed = 90.0
 
 [node name="Camera2D" parent="." unique_id=158705051 instance=ExtResource("5_6pf8w")]
 limit_left = 0
@@ -55,5 +57,7 @@ facing_direction = Vector2(-1, 0)
 [node name="CollisionShape2D" parent="map_end" index="0" unique_id=1091353782]
 position = Vector2(-0.5, 384.5)
 shape = SubResource("RectangleShape2D_pe777")
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1850910017]
 
 [editable path="map_end"]

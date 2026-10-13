@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4f5ex3putuah"]
 
 [ext_resource type="PackedScene" uid="uid://bfc8rts81wrfe" path="res://scenes/character.tscn" id="1_abqhh"]
-[ext_resource type="Script" uid="uid://dyqhb072hkbte" path="res://scenes/npc.gd" id="2_7n8xq"]
+[ext_resource type="Script" uid="uid://dyqhb072hkbte" path="res://scripts/npc.gd" id="2_7n8xq"]
 [ext_resource type="Texture2D" uid="uid://dv7lus641trs0" path="res://assets/characters/angel_walk_animation.png" id="2_rv78h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkhd4"]
@@ -9,7 +9,8 @@ radius = 11.045361
 
 [node name="npc" unique_id=449375442 instance=ExtResource("1_abqhh")]
 script = ExtResource("2_7n8xq")
-_npc_name = ""
+_npc_name = null
+speed = null
 
 [node name="texture" parent="." index="0" unique_id=501740398]
 texture = ExtResource("2_rv78h")

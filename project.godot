@@ -23,7 +23,7 @@ config/icon="res://icon.svg"
 
 PortalManager="*uid://bo53672ys8txu"
 SceneTransition="*uid://do3egio37h3gr"
-DialogueManager="*uid://biswdy1pobdx2"
+DialogManager="*uid://biswdy1pobdx2"
 
 [display]
 

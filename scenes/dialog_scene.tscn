@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bwt7d5p1gm8jy"]
 
-[ext_resource type="Texture2D" uid="uid://dkxdm48cx55ha" path="res://ui/dialogue/DialogBox.png" id="1_3l5nu"]
-[ext_resource type="Texture2D" uid="uid://c8smfp1liwe4k" path="res://assets/characters/pictures/maple_padrao.png" id="2_cno1m"]
-[ext_resource type="FontFile" uid="uid://0fiqp5wn3bi2" path="res://ui/fonts/Pixelta.ttf" id="3_qpcyj"]
-[ext_resource type="Texture2D" uid="uid://dd3mso0abshos" path="res://ui/dialogue/choicebox.png" id="4_bhyd5"]
+[ext_resource type="Script" uid="uid://cv3pvg6u7lxsa" path="res://scripts/dialog_scene.gd" id="1_d1dkx"]
+[ext_resource type="Texture2D" uid="uid://dkxdm48cx55ha" path="res://ui/dialogue/DialogBox.png" id="2_o0hvq"]
+[ext_resource type="Texture2D" uid="uid://c8smfp1liwe4k" path="res://assets/characters/pictures/maple_padrao.png" id="3_86fw1"]
+[ext_resource type="FontFile" uid="uid://0fiqp5wn3bi2" path="res://ui/fonts/Pixelta.ttf" id="4_5wtp7"]
+[ext_resource type="Texture2D" uid="uid://dd3mso0abshos" path="res://ui/dialogue/choicebox.png" id="5_hk57y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3u606"]
 line_spacing = 0.0
-font = ExtResource("3_qpcyj")
+font = ExtResource("4_5wtp7")
 font_size = 9
 font_color = Color(0, 0, 0, 1)
 
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d1dkx")
 
 [node name="dialogbox" type="TextureRect" parent="." unique_id=1730669025]
 layout_mode = 0
@@ -25,7 +27,7 @@ offset_left = 8.0
 offset_top = 129.0
 offset_right = 308.0
 offset_bottom = 179.0
-texture = ExtResource("1_3l5nu")
+texture = ExtResource("2_o0hvq")
 
 [node name="picture" type="TextureRect" parent="dialogbox" unique_id=271409596]
 layout_mode = 0
@@ -33,7 +35,7 @@ offset_left = -45.0
 offset_top = -82.0
 offset_right = 124.48126
 offset_bottom = 49.0
-texture = ExtResource("2_cno1m")
+texture = ExtResource("3_86fw1")
 expand_mode = 3
 stretch_mode = 5
 
@@ -68,7 +70,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(64, 15)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("4_bhyd5")
+texture = ExtResource("5_hk57y")
 
 [node name="text" type="Label" parent="dialogbox/VBoxContainer/HBoxContainer/choice_1" unique_id=77357179]
 layout_mode = 1
@@ -91,7 +93,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(64, 15)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("4_bhyd5")
+texture = ExtResource("5_hk57y")
 
 [node name="text" type="Label" parent="dialogbox/VBoxContainer/HBoxContainer/choice_2" unique_id=1209925780]
 layout_mode = 1
@@ -100,10 +102,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -6.0
-offset_right = 28.0
-offset_bottom = 6.0
+offset_left = -27.5
+offset_top = -5.5
+offset_right = 28.5
+offset_bottom = 6.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Mal"

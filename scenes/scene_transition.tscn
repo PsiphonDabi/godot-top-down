@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://do3egio37h3gr"]
 
-[ext_resource type="Script" uid="uid://biio0lxrrkf0" path="res://scenes/scene_transition.gd" id="1_0wykx"]
+[ext_resource type="Script" uid="uid://biio0lxrrkf0" path="res://scripts/scene_transition.gd" id="1_0wykx"]
 
 [sub_resource type="Animation" id="Animation_rujfs"]
 length = 0.001

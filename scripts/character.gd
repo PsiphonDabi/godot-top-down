@@ -31,6 +31,7 @@ var last_input_direction: Vector2 = Vector2.DOWN
 ## -----------------------------------------------------------------------
 
 func _ready():
+	print("oi")
 	_animation_tree.active = true
 	_state_machine = _animation_tree["parameters/playback"]
 	
@@ -47,6 +48,9 @@ func _ready():
 	
 	# Atualiza os blend positions da AnimationTree para o estado Idle (e Walk, se necessário)
 	_update_animation_blend_positions(PortalManager.spawn_facing_direction)
+	
+	print("a")
+	print(is_in_group("Player"))
 	
 ## -----------------------------------------------------------------------
 	
@@ -87,6 +91,13 @@ func _move():
 		
 	if input_direction != Vector2.ZERO:
 		last_input_direction = input_direction # Atualiza a última direção ativa
+		
+# Função para congelar o personagem
+func freeze(_state : bool) -> void:
+	# perguntar pq q é assim e se tem um jeito melhor de escrever ela
+	set_physics_process(not _state)
+	velocity = Vector2.ZERO
+	_animate()
 				
 func _attack():
 	esta_atacando = true
