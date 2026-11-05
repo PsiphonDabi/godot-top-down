@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cv3pvg6u7lxsa" path="res://scripts/dialog_scene.gd" id="1_d1dkx"]
 [ext_resource type="Texture2D" uid="uid://dkxdm48cx55ha" path="res://ui/dialogue/DialogBox.png" id="2_o0hvq"]
-[ext_resource type="Texture2D" uid="uid://c8smfp1liwe4k" path="res://assets/characters/pictures/maple_padrao.png" id="3_86fw1"]
+[ext_resource type="Texture2D" uid="uid://dkm0yo8a3n7m8" path="res://assets/characters/pictures/angel_teste.png" id="3_o0hvq"]
 [ext_resource type="FontFile" uid="uid://0fiqp5wn3bi2" path="res://ui/fonts/Pixelta.ttf" id="4_5wtp7"]
 [ext_resource type="Texture2D" uid="uid://dd3mso0abshos" path="res://ui/dialogue/choicebox.png" id="5_hk57y"]
 
@@ -10,7 +10,7 @@
 line_spacing = 0.0
 font = ExtResource("4_5wtp7")
 font_size = 9
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.5826839, 0.23085034, 0.061799616, 1)
 
 [node name="DialogueScene" type="Control" unique_id=1090353772]
 layout_mode = 3
@@ -35,7 +35,7 @@ offset_left = -45.0
 offset_top = -82.0
 offset_right = 124.48126
 offset_bottom = 49.0
-texture = ExtResource("3_86fw1")
+texture = ExtResource("3_o0hvq")
 expand_mode = 3
 stretch_mode = 5
 

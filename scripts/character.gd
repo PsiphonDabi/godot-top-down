@@ -14,7 +14,7 @@ var last_input_direction: Vector2 = Vector2.DOWN
 ## -----------------------------------------------------------------------
 
 
-# VARIAVEIS E CATEGORIAS PARA INSPETOR
+## VARIAVEIS E CATEGORIAS PARA INSPETOR
 ## -----------------------------------------------------------------------
 
 @export_category("Variables")

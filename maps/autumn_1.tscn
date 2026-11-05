@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://mu8oylvpmmg1" path="res://scenes/terreno.tscn" id="1_skxp2"]
 [ext_resource type="PackedScene" uid="uid://bfc8rts81wrfe" path="res://scenes/character.tscn" id="2_trwpq"]
+[ext_resource type="PackedScene" uid="uid://dv7qni1po20ea" path="res://scenes/chest.tscn" id="3_2k4aw"]
 [ext_resource type="PackedScene" uid="uid://l2aphkyropkn" path="res://scenes/camera.tscn" id="3_348va"]
 [ext_resource type="PackedScene" uid="uid://djq18apbtelhf" path="res://scenes/map_end.tscn" id="4_2k4aw"]
+[ext_resource type="Resource" uid="uid://6rdgoj7ip8v6" path="res://items/health_potion.tres" id="4_56cuq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vqck"]
 size = Vector2(12, 34)
@@ -26,6 +28,20 @@ tile_map_data = PackedByteArray("AAAIAAgAAQAAAAAAAAANAAQAAQAFAAAAAAD//w0AAQAFAAA
 [node name="character" parent="Terreno/Ysort" parent_id_path=PackedInt32Array(629607655, 1415813644) index="2" unique_id=1783612840 instance=ExtResource("2_trwpq")]
 position = Vector2(332, 196)
 
+[node name="Chest01" parent="Terreno/Ysort" parent_id_path=PackedInt32Array(629607655, 1415813644) index="3" unique_id=1942696682 node_paths=PackedStringArray("_interface") instance=ExtResource("3_2k4aw")]
+position = Vector2(343, 133)
+_chest_id = "chest_01"
+item_to_give = ExtResource("4_56cuq")
+_object_name = "chest_item"
+_interface = NodePath("../../../Interface")
+
+[node name="Chest02" parent="Terreno/Ysort" parent_id_path=PackedInt32Array(629607655, 1415813644) index="4" unique_id=909412917 node_paths=PackedStringArray("_interface") instance=ExtResource("3_2k4aw")]
+position = Vector2(331, 98)
+_chest_id = "chest_02"
+item_to_give = ExtResource("4_56cuq")
+_object_name = "chest_item"
+_interface = NodePath("../../../Interface")
+
 [node name="Camera2D" parent="." unique_id=158705051 instance=ExtResource("3_348va")]
 limit_left = -320
 limit_top = -222
@@ -41,6 +57,8 @@ facing_direction = Vector2(1, 0)
 [node name="CollisionShape2D" parent="level_end" index="0" unique_id=1091353782]
 position = Vector2(13, 3)
 shape = SubResource("RectangleShape2D_4vqck")
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=561254700]
 
 [editable path="Terreno"]
 [editable path="level_end"]

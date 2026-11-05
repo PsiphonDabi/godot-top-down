@@ -7,9 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://l2aphkyropkn" path="res://scenes/camera.tscn" id="5_6pf8w"]
 [ext_resource type="PackedScene" uid="uid://c4f5ex3putuah" path="res://scenes/npc.tscn" id="5_owwvt"]
 [ext_resource type="PackedScene" uid="uid://djq18apbtelhf" path="res://scenes/map_end.tscn" id="6_54svk"]
+[ext_resource type="Resource" uid="uid://6rdgoj7ip8v6" path="res://items/health_potion.tres" id="7_54svk"]
+[ext_resource type="Script" uid="uid://cf7dq08c73gqs" path="res://scripts/object_area.gd" id="8_3nhk3"]
+[ext_resource type="PackedScene" uid="uid://dv7qni1po20ea" path="res://scenes/chest.tscn" id="9_86ipb"]
+[ext_resource type="PackedScene" uid="uid://cq7bepi85effm" path="res://scenes/PauseMenu.tscn" id="10_6pf8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe777"]
 size = Vector2(13, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_texw0"]
+size = Vector2(26, 34)
 
 [node name="Autumn 2" type="Node2D" unique_id=2045265372]
 metadata/_edit_vertical_guides_ = [20.0]
@@ -26,12 +33,12 @@ y_sort_enabled = true
 
 [node name="Natureza" type="TileMapLayer" parent="Terreno/Ysort" unique_id=1707741038]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAFABYAAAAAAAAAAAANABkAAAAAAAAAAAAaABUAAAAAAAAAAAAWAAkAAAAAAAAAAAAaAAoAAAAAAAAAAAAXAAwAAAAAAAAAAAAJAAYAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAcAAAAAAAAAAAACAAQAAAAAAAAAAAACAAcAAAAAAAAAAAAJAAIAAAAAAAAAAAANAAUAAAAAAAAAAAAkAA0AAAAAAAAAAAAhAAIAAAAAAAAAAAAnAAUAAAAAAAAAAAAkAAMAAAAAAAAAAAAfAAMAAAAAAAAAAAAcABYAAAAAAAAAAAAjAB0AAAAAAAAAAAAnAB4AAAAAAAAAAAAoABIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAFABYAAAAAAAAAAAANABkAAAAAAAAAAAAaABUAAAAAAAAAAAAWAAkAAAAAAAAAAAAaAAoAAAAAAAAAAAAXAAwAAAAAAAAAAAAJAAYAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAcAAAAAAAAAAAACAAQAAAAAAAAAAAACAAcAAAAAAAAAAAAJAAIAAAAAAAAAAAANAAUAAAAAAAAAAAAkAA0AAAAAAAAAAAAhAAIAAAAAAAAAAAAnAAUAAAAAAAAAAAAkAAMAAAAAAAAAAAAfAAMAAAAAAAAAAAAcABYAAAAAAAAAAAAnAB4AAAAAAAAAAAAoABIAAAAAAAAAAAA=")
 tile_set = ExtResource("2_owwvt")
 
 [node name="Decoracao" type="TileMapLayer" parent="Terreno/Ysort" unique_id=1250398185]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAARAAYAAQAAAAIAAAADAAsAAQAFAAAAAAAkABIAAQAFAAAAAAAIABYAAQAFAAAAAAAWABAAAQAFAAAAAAAfAAUAAQAFAAAAAAA=")
+tile_map_data = PackedByteArray("AAARAAYAAQAAAAIAAAADAAsAAQAFAAAAAAAkABIAAQAFAAAAAAAIABYAAQAFAAAAAAAWABAAAQAFAAAAAAAfAAUAAQAFAAAAAAAiAAUAAQAAAAQAAAA=")
 tile_set = ExtResource("3_3nhk3")
 
 [node name="character" parent="Terreno/Ysort" unique_id=449375442 instance=ExtResource("4_86ipb")]
@@ -41,7 +48,27 @@ position = Vector2(234, 270)
 position = Vector2(296, 180)
 _npc_name = "angel"
 _interface = NodePath("../../../Interface")
-speed = 90.0
+
+[node name="Chest01" parent="Terreno/Ysort" unique_id=1942696682 node_paths=PackedStringArray("_interface") instance=ExtResource("9_86ipb")]
+position = Vector2(522, 163)
+_chest_id = "chest_01"
+item_to_give = ExtResource("7_54svk")
+_object_name = "chest_item"
+_interface = NodePath("../../../Interface")
+
+[node name="Chest02" parent="Terreno/Ysort" unique_id=303844838 node_paths=PackedStringArray("_interface") instance=ExtResource("9_86ipb")]
+position = Vector2(471, 146)
+_chest_id = "chest_02"
+item_to_give = ExtResource("7_54svk")
+_object_name = "chest_item"
+_interface = NodePath("../../../Interface")
+
+[node name="Chest03" parent="Terreno/Ysort" unique_id=757970567 node_paths=PackedStringArray("_interface") instance=ExtResource("9_86ipb")]
+position = Vector2(470, 186)
+_chest_id = "chest_03"
+item_to_give = ExtResource("7_54svk")
+_object_name = "chest_item"
+_interface = NodePath("../../../Interface")
 
 [node name="Camera2D" parent="." unique_id=158705051 instance=ExtResource("5_6pf8w")]
 limit_left = 0
@@ -59,5 +86,20 @@ position = Vector2(-0.5, 384.5)
 shape = SubResource("RectangleShape2D_pe777")
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=1850910017]
+
+[node name="ChestArea" type="Area2D" parent="." unique_id=95055089 node_paths=PackedStringArray("_interface")]
+position = Vector2(552, 87)
+script = ExtResource("8_3nhk3")
+_object_name = "chest_01"
+_interface = NodePath("../Interface")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChestArea" unique_id=1604546857]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_texw0")
+
+[node name="PauseMenu" parent="." unique_id=1184352179 instance=ExtResource("10_6pf8w")]
+
+[connection signal="body_entered" from="ChestArea" to="ChestArea" method="_on_body_entered"]
+[connection signal="body_exited" from="ChestArea" to="ChestArea" method="_on_body_exited"]
 
 [editable path="map_end"]

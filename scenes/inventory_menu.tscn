@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dae5qymc4ik5j"]
+
+[ext_resource type="Script" uid="uid://cqkmocg4g7xbu" path="res://scripts/inventory_menu.gd" id="1_764yi"]
+[ext_resource type="Material" uid="uid://tmkefibescbb" path="res://shaders/blur_shader.tres" id="1_xh5dw"]
+[ext_resource type="Texture2D" uid="uid://1cvr75x43qym" path="res://ui/item_grid.png" id="3_lq73l"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=845320250]
+script = ExtResource("1_764yi")
+
+[node name="BackgroundOverlay" type="ColorRect" parent="." unique_id=559022882]
+material = ExtResource("1_xh5dw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1692468365]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -65.0
+offset_right = 50.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lq73l")
+
+[node name="ItemGrid" type="GridContainer" parent="." unique_id=1521865683]
+offset_left = 115.0
+offset_top = 30.0
+offset_right = 205.0
+offset_bottom = 150.0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="ItemGrid" unique_id=1427862287]
+layout_mode = 2
+
+[node name="Cursor" type="Sprite2D" parent="." unique_id=439964188]

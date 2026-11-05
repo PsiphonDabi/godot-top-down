@@ -2,18 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://bfc8rts81wrfe" path="res://scenes/character.tscn" id="1_abqhh"]
 [ext_resource type="Script" uid="uid://dyqhb072hkbte" path="res://scripts/npc.gd" id="2_7n8xq"]
-[ext_resource type="Texture2D" uid="uid://dv7lus641trs0" path="res://assets/characters/angel_walk_animation.png" id="2_rv78h"]
+[ext_resource type="Texture2D" uid="uid://d1qt8axkxqr5" path="res://assets/characters/angel_walk_animation_v2.png" id="3_rv78h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkhd4"]
 radius = 11.045361
 
 [node name="npc" unique_id=449375442 instance=ExtResource("1_abqhh")]
 script = ExtResource("2_7n8xq")
-_npc_name = null
-speed = null
+_npc_name = ""
 
 [node name="texture" parent="." index="0" unique_id=501740398]
-texture = ExtResource("2_rv78h")
+texture = ExtResource("3_rv78h")
 
 [node name="AttackArea" parent="." index="4" unique_id=441592676]
 visible = false

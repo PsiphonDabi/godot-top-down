@@ -7,14 +7,19 @@ texture = ExtResource("1_yj6jk")
 0:0/size_in_atlas = Vector2i(4, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 6)
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-27.81464, 0.25171638, 28.989317, 0.08390522, 28.737602, 14.935163, -27.81464, 15.102973)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-28.237823, -1.978447, 29.137115, -1.7985878, 28.95726, 9.892227, -28.05796, 9.532513)
 0:2/size_in_atlas = Vector2i(4, 2)
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-27.81464, 0.25171638, 28.989317, 0.08390522, 28.737602, 14.935163, -27.81464, 15.102973)
+0:2/0/texture_origin = Vector2i(0, 5)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-28.237823, -1.978447, 29.137115, -1.7985878, 28.95726, 9.892227, -28.05796, 9.532513)
 5:0/size_in_atlas = Vector2i(2, 6)
 5:0/0 = 0
 5:0/0/texture_origin = Vector2i(0, 36)
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.935926, -4.614797, 8, -4.6987023, 8, 6.9641485, -9.187642, 6.9641485)
+0:4/size_in_atlas = Vector2i(2, 2)
+0:4/0 = 0
+0:4/0/texture_origin = Vector2i(0, 7)
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.951725, -7.9658833, 12.951725, -7.908575, 13.066341, 3.9542885, -12.951725, 3.9542885)
 
 [resource]
 physics_layer_0/collision_layer = 1

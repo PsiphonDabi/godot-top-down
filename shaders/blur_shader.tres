@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://tmkefibescbb"]
+
+[ext_resource type="Shader" uid="uid://dcnq3ndosviur" path="res://shaders/PauseMenu.gdshader" id="1_5mngj"]
+
+[resource]
+shader = ExtResource("1_5mngj")
+shader_parameter/lod = 1.0

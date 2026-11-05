@@ -9,28 +9,35 @@ var _dialog_infos : Dictionary = {} # |Informações de cada dialogo no dialog_m
 var current_dialog : String = "" # Variavel que armazena qual dialogo (tipo first_dialog, second_dialog, etc)
 var _player : CharacterBody2D = null # Armazena o player (criado para usar o freeze())
 
-var current_player : PlayerBase
-var current_npc : NpcBase
+var current_player : PlayerBase # Isso aq é mais pra usar o freeze por enquanto
+var current_npc # Pra usar algumas variaveis de npc, como dialog_opened e current_dialog
+# OBSERVAÇÃO: removi a tipagem de NpcBase do current_npc pra funcionar essa variavel no object_area
 
-var dialog_speed : float = 0.03
+var dialog_speed : float = 0.015
 
 ## -----------------------------------------------------------------------
 
 func _ready() -> void:
 	print (_dialog_infos)
 	print(current_dialog)
-	current_dialog = _dialog_infos["current_dialog"]
+	current_dialog = _dialog_infos["current_dialog"] # Informações da caixa de dialogo atual
+	# E tambem pega o second_dialog do singleton do dialog_manager
 	_load_dialog()
 	
 ## -----------------------------------------------------------------------
 
 # Função que gera a caixa de dialogo
 func _load_dialog() -> void:
-	# -----
+	# # Obtém as informações e configurações do bloco de diálogo atual baseado no índice
 	var infos_current_dialog : Dictionary = _dialog_infos[current_dialog][_dialog_index]
+	# O primeiro indice pega qual o dialogo da vez (first, second, ...)
+	# O segundo pega o indice dentro de cada dialogo (qual caixa de dialogo aparece)
 	
-	# Carrega a picture que tem na _dialog_list
-	$dialogbox/picture.texture = load(_dialog_infos["picture"])
+	if not infos_current_dialog["picture"].is_empty():
+		# Carrega a picture que tem na _dialog_list
+		$dialogbox/picture.texture = load(infos_current_dialog["picture"])	
+	else:
+		$dialogbox/picture.texture = null
 	
 	# Possibilidades de dialogo: message e question
 	match infos_current_dialog["type"]:
@@ -68,10 +75,12 @@ func _load_dialog() -> void:
 				
 # Usamos o process para a atualização das caixas de dialogo
 func _process(_delta: float) -> void:
+	
+	# Fazendo as letras aparecerem uma a uma na velocidade dialog_speed (sistema provisório)
 	if $dialogbox/dialog.visible_ratio < 1.0:
 		$dialogbox/dialog.visible_ratio += dialog_speed
 	
-	# Se confirmas passa pro proximo dialogo
+	# Se confirmar passa pro proximo dialogo
 	if Input.is_action_just_pressed("interact"):
 		# Se o indice passsa do tamamho do array de dialogos, encerra a conversa
 		if _dialog_index >= _dialog_infos[current_dialog].size():
@@ -87,9 +96,9 @@ func _end_dialog() -> void:
 		if _dialog_infos.has("second_dialog"):
 			_dialog_infos["current_dialog"] = "second_dialog"
 	
-	current_player.freeze(false)
+	current_player.freeze(false) # Descongela o player dps do dialogo fechar
 	current_npc.dialog_opened = false
 	
-	queue_free()
+	queue_free() # Da um fim no nó do dialogo na cena
 	
 	

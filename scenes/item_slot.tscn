@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dl6air65oa6v3"]
+
+[ext_resource type="FontFile" uid="uid://0fiqp5wn3bi2" path="res://ui/fonts/Pixelta.ttf" id="1_567tv"]
+[ext_resource type="Script" uid="uid://buxnr3y3fhiy6" path="res://scripts/item_slot.gd" id="1_eqbkm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_texw0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3u606"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wc6bx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qp7dm"]
+font = ExtResource("1_567tv")
+font_size = 9
+font_color = Color(0.58431375, 0.23137255, 0.0627451, 1)
+
+[node name="Button" type="Button" unique_id=4847596]
+custom_minimum_size = Vector2(44, 10)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_texw0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3u606")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wc6bx")
+alignment = 0
+script = ExtResource("1_eqbkm")
+
+[node name="ItemName" type="Label" parent="." unique_id=1485765161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Espada"
+label_settings = SubResource("LabelSettings_qp7dm")
